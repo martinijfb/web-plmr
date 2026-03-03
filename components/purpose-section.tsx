@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SectionCta } from "@/components/section-cta";
 
 export function PurposeSection() {
   return (
@@ -29,23 +29,11 @@ export function PurposeSection() {
           </span>
         </p>
 
-        <Link
+        <SectionCta
+          label="WHO WE ARE"
           href="#"
-          className="group mt-[clamp(2.4rem,4.8vw,5rem)] inline-flex w-fit items-center gap-[clamp(0.8rem,1.4vw,1.6rem)] text-curious-blue-500 no-underline focus-visible:rounded-md focus-visible:outline-[3px] focus-visible:outline-[#1f70ce] focus-visible:outline-offset-4"
-        >
-          <span className="inline-flex flex-col items-start text-left text-[clamp(0.95rem,1.15vw,1.65rem)] leading-[1.06] font-medium">
-            Learn more about
-            <span className="mt-[0.18em] text-[0.7em] font-bold tracking-[0.03em]">
-              WHO WE ARE
-            </span>
-          </span>
-          <span
-            className="text-[clamp(1.4rem,2vw,2.4rem)] leading-[0.9] font-light text-blumine-500 transition-transform duration-150 group-hover:translate-x-0.5"
-            aria-hidden
-          >
-            &#8250;
-          </span>
-        </Link>
+          className="mt-[clamp(2.4rem,4.8vw,5rem)]"
+        />
       </div>
     </section>
   );

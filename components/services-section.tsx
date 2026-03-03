@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { BlueCapsuleMosaic } from "@/components/blue-capsule-mosaic";
+import { SectionCta } from "@/components/section-cta";
 
 type ServiceImage = {
   src: string;
@@ -41,20 +41,11 @@ export function ServicesSection() {
             <span className="text-curious-blue-500">SERVICES</span>
           </h2>
 
-          <Link
+          <SectionCta
+            label="SERVICES"
             href="#"
-            className="mt-[clamp(2rem,4.2vw,3.8rem)] inline-flex items-center gap-[clamp(0.7rem,1.35vw,1.45rem)] text-curious-blue-500 no-underline focus-visible:rounded-md focus-visible:outline-[3px] focus-visible:outline-[#1f70ce] focus-visible:outline-offset-4"
-          >
-            <span className="inline-flex flex-col items-start text-[clamp(0.95rem,1.15vw,1.65rem)] leading-[1.06] font-medium">
-              Learn more about
-              <span className="mt-[0.12em] text-[0.65em] font-bold tracking-[0.035em]">
-                SERVICES
-              </span>
-            </span>
-            <span className="text-[clamp(1.4rem,2vw,2.4rem)] leading-[0.9] font-light text-blumine-500" aria-hidden>
-              &#8250;
-            </span>
-          </Link>
+            className="mt-[clamp(2rem,4.2vw,3.8rem)]"
+          />
         </div>
       </div>
 
