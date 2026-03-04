@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 type AwardItem = {
@@ -19,15 +19,13 @@ const SCROLL_SPEED = 0.5;
 
 export function AwardsCarousel({ items }: AwardsCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const pausedRef = useRef(false);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     let animId: number;
 
     const animate = () => {
       const track = trackRef.current;
-      if (track && !pausedRef.current) {
+      if (track) {
         track.scrollLeft += SCROLL_SPEED;
         if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 1) {
           track.scrollLeft = 0;
@@ -40,25 +38,13 @@ export function AwardsCarousel({ items }: AwardsCarouselProps) {
     return () => cancelAnimationFrame(animId);
   }, []);
 
-  const handleMouseEnter = (i: number) => {
-    pausedRef.current = true;
-    setHoveredIndex(i);
-  };
-
-  const handleMouseLeave = () => {
-    pausedRef.current = false;
-    setHoveredIndex(null);
-  };
-
   return (
     <div className="awards-carousel">
       <div className="awards-carousel__track" ref={trackRef}>
-        {items.map((item, i) => (
+        {items.map((item) => (
           <div
             key={item.title}
-            className={`awards-carousel__slide${hoveredIndex !== null && hoveredIndex !== i ? " awards-carousel__slide--dimmed" : ""}`}
-            onMouseEnter={() => handleMouseEnter(i)}
-            onMouseLeave={handleMouseLeave}
+            className="awards-carousel__slide"
           >
             <div className="awards-carousel__slide-image">
               <Image
