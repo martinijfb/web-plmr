@@ -74,7 +74,19 @@ export function PurposeSection() {
             </span>
           </span>
           <span className="purpose-reveal__line" ref={setLineRef(2)}>
-            FOR OUR CLIENTS, OUR PEOPLE AND SOCIETY&rdquo;
+            FOR OUR{" "}
+            <span className="inline-block font-bold text-curious-blue-500 transition-all duration-300 ease-out will-change-transform hover:scale-110 hover:[text-shadow:0_0_12px_rgba(31,157,216,0.65),0_0_24px_rgba(32,80,129,0.45)]">
+              CLIENTS
+            </span>
+            , OUR{" "}
+            <span className="inline-block font-bold text-curious-blue-500 transition-all duration-300 ease-out will-change-transform hover:scale-110 hover:[text-shadow:0_0_12px_rgba(31,157,216,0.65),0_0_24px_rgba(32,80,129,0.45)]">
+              PEOPLE
+            </span>{" "}
+            AND{" "}
+            <span className="inline-block font-bold text-curious-blue-500 transition-all duration-300 ease-out will-change-transform hover:scale-110 hover:[text-shadow:0_0_12px_rgba(31,157,216,0.65),0_0_24px_rgba(32,80,129,0.45)]">
+              SOCIETY
+            </span>
+            &rdquo;
           </span>
         </p>
 
