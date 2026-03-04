@@ -1,5 +1,7 @@
 import { HomeHero } from "@/components/home-hero";
+import { InitiativesSection } from "@/components/initiatives-section";
 import { MediaSection } from "@/components/media-section";
+import { NewsSection } from "@/components/news-section";
 import { PurposeSection } from "@/components/purpose-section";
 import { ScrollVelocityBand } from "@/components/scroll-velocity-band";
 import { ServicesSection } from "@/components/services-section";
@@ -17,6 +19,8 @@ export default function Home() {
       <ServicesSection />
       <WorkSection />
       <MediaSection />
+      <NewsSection />
+      <InitiativesSection />
     </>
   );
 }

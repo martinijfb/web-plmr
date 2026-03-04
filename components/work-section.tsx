@@ -33,7 +33,7 @@ const WORK_ITEMS: WorkItem[] = [
   {
     title: "The Big Issue",
     description: "Helping The Big Issue to fight mass homelessness",
-    image: "/work-section/work-6.png",
+    image: "/work-section/work-4.png",
     href: "#",
   },
   {
