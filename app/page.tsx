@@ -1,6 +1,7 @@
 import { AwardsSection } from "@/components/awards-section";
 import { HomeHero } from "@/components/home-hero";
 import { InitiativesSection } from "@/components/initiatives-section";
+import { MailingListSection } from "@/components/mailing-list-section";
 import { MediaSection } from "@/components/media-section";
 import { NewsSection } from "@/components/news-section";
 import { PurposeSection } from "@/components/purpose-section";
@@ -23,6 +24,7 @@ export default function Home() {
       <NewsSection />
       <InitiativesSection />
       <AwardsSection />
+      <MailingListSection />
     </>
   );
 }
