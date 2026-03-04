@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
 import "./globals.css";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <div className="plmr-shell">
           <SiteNavbar />
           <main className="plmr-main">{children}</main>
+          <SiteFooter />
         </div>
       </body>
     </html>
