@@ -35,10 +35,10 @@ export function ServicesSection() {
     >
       <div className="pointer-events-none relative z-10 mx-auto max-w-[1800px] px-4 sm:px-8 md:flex md:items-center md:min-h-[clamp(520px,50vw,780px)]">
         <div className="pointer-events-auto pt-[clamp(2rem,2.6vw,3.8rem)] md:w-[40%] md:pt-0 md:pl-[clamp(0.4rem,2.5vw,3rem)]">
-          <h2 className="m-0 flex flex-col gap-[0.1em] text-[clamp(1.35rem,2.7vw,3.4rem)] font-semibold leading-[1.12] tracking-[0.005em] text-blumine-500 uppercase">
+          <h2 className="m-0 flex flex-col gap-[0.1em] text-[clamp(1.35rem,2.7vw,3.4rem)] font-medium leading-[1.12] tracking-[0.005em] text-blumine-500 uppercase">
             <span>WE PROVIDE A RANGE</span>
             <span>OF COMMUNICATIONS</span>
-            <span className="text-curious-blue-500">SERVICES</span>
+            <span className="font-extrabold text-curious-blue-500">SERVICES</span>
           </h2>
 
           <SectionCta
