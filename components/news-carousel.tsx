@@ -31,16 +31,6 @@ export function NewsCarousel({ items }: NewsCarouselProps) {
 
   return (
     <div className="news-carousel">
-      <button
-        className="news-carousel__chevron news-carousel__chevron--left"
-        onClick={() => scroll(-1)}
-        aria-label="Scroll left"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M15 6l-6 6 6 6" />
-        </svg>
-      </button>
-
       <div className="news-carousel__track" ref={trackRef}>
         {items.map((item, i) => (
           <Link
@@ -70,15 +60,26 @@ export function NewsCarousel({ items }: NewsCarouselProps) {
         ))}
       </div>
 
-      <button
-        className="news-carousel__chevron news-carousel__chevron--right"
-        onClick={() => scroll(1)}
-        aria-label="Scroll right"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M9 6l6 6-6 6" />
-        </svg>
-      </button>
+      <div className="news-carousel__nav">
+        <button
+          className="news-carousel__chevron"
+          onClick={() => scroll(-1)}
+          aria-label="Scroll left"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </button>
+        <button
+          className="news-carousel__chevron"
+          onClick={() => scroll(1)}
+          aria-label="Scroll right"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }

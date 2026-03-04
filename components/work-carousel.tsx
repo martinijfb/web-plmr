@@ -31,16 +31,6 @@ export function WorkCarousel({ items }: WorkCarouselProps) {
 
   return (
     <div className="work-carousel">
-      <button
-        className="work-carousel__chevron work-carousel__chevron--left"
-        onClick={() => scroll(-1)}
-        aria-label="Scroll left"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M15 6l-6 6 6 6" />
-        </svg>
-      </button>
-
       <div className="work-carousel__track" ref={trackRef}>
         {items.map((item, i) => (
           <Link
@@ -68,15 +58,26 @@ export function WorkCarousel({ items }: WorkCarouselProps) {
         ))}
       </div>
 
-      <button
-        className="work-carousel__chevron work-carousel__chevron--right"
-        onClick={() => scroll(1)}
-        aria-label="Scroll right"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M9 6l6 6-6 6" />
-        </svg>
-      </button>
+      <div className="work-carousel__nav">
+        <button
+          className="work-carousel__chevron"
+          onClick={() => scroll(-1)}
+          aria-label="Scroll left"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </button>
+        <button
+          className="work-carousel__chevron"
+          onClick={() => scroll(1)}
+          aria-label="Scroll right"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }
