@@ -2,6 +2,7 @@ import { HomeHero } from "@/components/home-hero";
 import { PurposeSection } from "@/components/purpose-section";
 import { ScrollVelocityBand } from "@/components/scroll-velocity-band";
 import { ServicesSection } from "@/components/services-section";
+import { WorkSection } from "@/components/work-section";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       />
       <PurposeSection />
       <ServicesSection />
+      <WorkSection />
     </>
   );
 }
