@@ -109,7 +109,7 @@ body {
 }
 
 .site-navbar__brand img {
-  width: clamp(170px, 12vw, 230px);
+  width: clamp(130px, 10vw, 170px);
   height: auto;
 }
 
@@ -320,7 +320,7 @@ body {
   }
 
   .site-navbar__brand img {
-    width: 160px;
+    width: 130px;
   }
 
   /* Hide desktop CTA, show hamburger */
@@ -478,7 +478,7 @@ body {
   }
 
   .site-navbar__brand img {
-    width: 140px;
+    width: 110px;
   }
 
   .site-navbar__link {
