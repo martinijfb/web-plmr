@@ -855,9 +855,9 @@ body {
 }
 
 .work-section__inner {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 3vw, 2.5rem);
+  padding: 0 clamp(2rem, calc(2rem + 2.5vw), 5rem);
 }
 
 .work-section__header {
@@ -909,8 +909,8 @@ body {
 .work-carousel {
   position: relative;
   margin-top: clamp(1.5rem, 3vw, 2.5rem);
-  margin-left: clamp(-2.5rem, -2.8vw, -3rem);
-  margin-right: clamp(-2.5rem, -2.8vw, -3rem);
+  margin-left: clamp(-5rem, calc(-2rem - 2.5vw), -2rem);
+  margin-right: clamp(-5rem, calc(-2rem - 2.5vw), -2rem);
 }
 
 .work-carousel__track {
@@ -919,7 +919,7 @@ body {
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  padding: 0 clamp(2.5rem, 2.8vw, 3rem);
+  padding: 0 clamp(2rem, calc(2rem + 2.5vw), 5rem);
 }
 
 .work-carousel__track::-webkit-scrollbar {
