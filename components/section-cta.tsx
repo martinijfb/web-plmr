@@ -1,30 +1,27 @@
 import Link from "next/link";
+import { ChevronIcon } from "@/components/chevron-icon";
+import styles from "./section-cta.module.css";
 
 type SectionCtaProps = {
   label: string;
   href: string;
+  variant?: "default" | "light";
   className?: string;
 };
 
-export function SectionCta({ label, href, className = "" }: SectionCtaProps) {
+export function SectionCta({
+  label,
+  href,
+  variant = "default",
+  className = "",
+}: SectionCtaProps) {
   return (
     <Link
       href={href}
-      className={`section-cta group ${className}`}
+      className={`${styles.cta}${variant === "light" ? ` ${styles.light}` : ""}${className ? ` ${className}` : ""}`}
     >
-      <span className="section-cta__label">{label}</span>
-      <svg
-        className="section-cta__chevron"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M9 6l6 6-6 6" />
-      </svg>
+      <span className={styles.label}>{label}</span>
+      <ChevronIcon className={styles.chevron} strokeWidth={3} />
     </Link>
   );
 }

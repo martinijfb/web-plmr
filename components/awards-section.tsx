@@ -1,4 +1,6 @@
+import { SectionHeading, Highlight } from "@/components/section-heading";
 import { AwardsCarousel } from "@/components/awards-carousel";
+import styles from "./awards-section.module.css";
 
 type AwardItem = {
   badge: string;
@@ -62,12 +64,12 @@ const AWARD_ITEMS: AwardItem[] = [
 
 export function AwardsSection() {
   return (
-    <section className="awards-section" aria-label="Awards and recognition">
-      <div className="awards-section__inner">
-        <h2 className="awards-section__title">
+    <section className={styles.section} aria-label="Awards and recognition">
+      <div className={styles.inner}>
+        <SectionHeading className={styles.title}>
           IMPACTFUL{" "}
-          <span className="awards-section__title-highlight">AWARDS</span>
-        </h2>
+          <Highlight>AWARDS</Highlight>
+        </SectionHeading>
       </div>
 
       <AwardsCarousel items={AWARD_ITEMS} />

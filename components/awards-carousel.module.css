@@ -1,0 +1,49 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.track {
+  scroll-behavior: auto;
+  padding: 0 clamp(2rem, calc(2rem + 2.5vw), 5rem);
+}
+
+/* Awards slides don't have hover interaction - no dimming, no lift */
+.slide {
+  transition: none;
+}
+
+.slide:hover {
+  transform: none;
+  box-shadow: none;
+  filter: none;
+}
+
+.slideInfo {
+  justify-content: space-between;
+}
+
+.slideBadge {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 1.3vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding-bottom: clamp(0.8rem, 1.1vw, 1.2rem);
+  border-bottom: 2px solid var(--color-curious-blue-500);
+}
+
+.slideDesc {
+  margin: clamp(0.8rem, 1.1vw, 1.2rem) 0 0;
+}
+
+.slideYear {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(0.88rem, 1vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.9;
+}

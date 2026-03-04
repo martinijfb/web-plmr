@@ -1,0 +1,18 @@
+.carousel {
+  position: relative;
+  margin-top: clamp(0.25rem, 0.8vw, 0.5rem);
+  margin-left: clamp(-5rem, calc(-2rem - 2.5vw), -2rem);
+  margin-right: clamp(-5rem, calc(-2rem - 2.5vw), -2rem);
+}
+
+.track {
+  padding: 0 clamp(2rem, calc(2rem + 2.5vw), 5rem);
+}
+
+.slideInfo {
+  justify-content: flex-start;
+}
+
+.slideDesc {
+  margin-top: clamp(0.8rem, 1.1vw, 1.2rem);
+}

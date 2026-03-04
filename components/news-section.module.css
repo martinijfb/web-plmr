@@ -1,0 +1,85 @@
+.section {
+  background: #ffffff;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.inner {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, calc(2rem + 2.5vw), 5rem);
+}
+
+.layout {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.carouselArea {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: clamp(200px, 20vw, 320px);
+  text-align: right;
+}
+
+.title {
+  margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.6rem, 1vw, 1rem);
+  text-decoration: none;
+  transition: gap 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cta:hover {
+  gap: clamp(0.85rem, 1.3vw, 1.4rem);
+}
+
+.ctaLabel {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 1.15vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  color: var(--color-blumine-500);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  padding-bottom: 2px;
+  transition: background-size 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cta:hover .ctaLabel {
+  background-size: 100% 2px;
+}
+
+.ctaChevron {
+  width: clamp(0.85rem, 1.05vw, 1.35rem);
+  height: clamp(0.85rem, 1.05vw, 1.35rem);
+  flex-shrink: 0;
+  color: var(--color-blumine-500);
+  transition: transform 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cta:hover .ctaChevron {
+  transform: translateX(-3px);
+}
+
+@media (max-width: 700px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: left;
+  }
+}

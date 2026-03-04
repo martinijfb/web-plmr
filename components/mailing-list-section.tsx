@@ -1,55 +1,58 @@
+import { SectionHeading, Highlight } from "@/components/section-heading";
+import styles from "./mailing-list-section.module.css";
+
 export function MailingListSection() {
   return (
-    <section className="mailing-list" aria-label="Join our mailing list">
-      <div className="mailing-list__card">
-        <div className="mailing-list__content">
-          <h2 className="mailing-list__title">
+    <section className={styles.section} aria-label="Join our mailing list">
+      <div className={styles.card}>
+        <div className={styles.content}>
+          <SectionHeading className={styles.title}>
             JOIN OUR
             <br />
-            <span className="mailing-list__title-highlight">MAILING LIST</span>
-          </h2>
+            <Highlight>MAILING LIST</Highlight>
+          </SectionHeading>
 
-          <form className="mailing-list__form">
-            <div className="mailing-list__fields">
-              <div className="mailing-list__field">
-                <label className="mailing-list__label" htmlFor="ml-name">
+          <form>
+            <div className={styles.fields}>
+              <div className={styles.field}>
+                <label className={styles.label} htmlFor="ml-name">
                   NAME
                 </label>
                 <input
-                  className="mailing-list__input"
+                  className={styles.input}
                   type="text"
                   id="ml-name"
                   name="name"
                 />
               </div>
-              <div className="mailing-list__field">
-                <label className="mailing-list__label" htmlFor="ml-email">
+              <div className={styles.field}>
+                <label className={styles.label} htmlFor="ml-email">
                   EMAIL
                 </label>
                 <input
-                  className="mailing-list__input"
+                  className={styles.input}
                   type="email"
                   id="ml-email"
                   name="email"
                 />
               </div>
-              <div className="mailing-list__field">
-                <label className="mailing-list__label" htmlFor="ml-org">
+              <div className={styles.field}>
+                <label className={styles.label} htmlFor="ml-org">
                   ORGANISATION
                 </label>
                 <input
-                  className="mailing-list__input"
+                  className={styles.input}
                   type="text"
                   id="ml-org"
                   name="organisation"
                 />
               </div>
-              <div className="mailing-list__field">
-                <label className="mailing-list__label" htmlFor="ml-sector">
+              <div className={styles.field}>
+                <label className={styles.label} htmlFor="ml-sector">
                   SECTOR
                 </label>
                 <input
-                  className="mailing-list__input"
+                  className={styles.input}
                   type="text"
                   id="ml-sector"
                   name="sector"
@@ -57,20 +60,20 @@ export function MailingListSection() {
               </div>
             </div>
 
-            <div className="mailing-list__consent">
+            <div className={styles.consent}>
               <input
                 type="checkbox"
                 id="ml-consent"
                 name="consent"
-                className="mailing-list__checkbox"
+                className={styles.checkbox}
               />
-              <label htmlFor="ml-consent" className="mailing-list__consent-label">
+              <label htmlFor="ml-consent" className={styles.consentLabel}>
                 I have read, understand and accept the content of the Privacy
                 Policy and consent to the processing of my data.
               </label>
             </div>
 
-            <button type="submit" className="mailing-list__submit">
+            <button type="submit" className={styles.submit}>
               SUBMIT
             </button>
           </form>

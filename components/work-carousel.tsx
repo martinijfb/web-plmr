@@ -1,8 +1,11 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronIcon } from "@/components/chevron-icon";
+import { useCarousel } from "@/hooks/use-carousel";
+import carousel from "./carousel.module.css";
+import styles from "./work-carousel.module.css";
 
 type WorkItem = {
   title: string;
@@ -15,67 +18,58 @@ type WorkCarouselProps = {
   items: WorkItem[];
 };
 
-const SCROLL_AMOUNT = 400;
-
 export function WorkCarousel({ items }: WorkCarouselProps) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const scroll = useCallback((direction: 1 | -1) => {
-    if (!trackRef.current) return;
-    trackRef.current.scrollBy({
-      left: direction * SCROLL_AMOUNT,
-      behavior: "smooth",
-    });
-  }, []);
+  const { trackRef, scroll, onMouseEnter, onMouseLeave, isDimmed } =
+    useCarousel();
 
   return (
-    <div className="work-carousel">
-      <div className="work-carousel__track" ref={trackRef}>
+    <div className={styles.carousel}>
+      <div
+        className={`${carousel.track} ${styles.track}`}
+        ref={trackRef}
+      >
         {items.map((item, i) => (
           <Link
             key={item.title}
             href={item.href}
-            className={`work-carousel__slide${hoveredIndex !== null && hoveredIndex !== i ? " work-carousel__slide--dimmed" : ""}`}
-            onMouseEnter={() => setHoveredIndex(i)}
-            onMouseLeave={() => setHoveredIndex(null)}
+            className={`${carousel.slide}${isDimmed(i) ? ` ${carousel.slideDimmed}` : ""}`}
+            onMouseEnter={() => onMouseEnter(i)}
+            onMouseLeave={onMouseLeave}
           >
-            <div className="work-carousel__slide-image">
+            <div className={carousel.slideImageWrap}>
               <Image
                 src={item.image}
                 alt={item.title}
                 width={400}
                 height={300}
                 sizes="(max-width: 700px) 72vw, (max-width: 1024px) 40vw, 26vw"
-                className="work-carousel__image"
+                className={carousel.slideImage}
               />
             </div>
-            <div className="work-carousel__slide-info">
-              <h3 className="work-carousel__slide-title">{item.title}</h3>
-              <p className="work-carousel__slide-desc">{item.description}</p>
+            <div className={`${carousel.slideInfo} ${styles.slideInfo}`}>
+              <h3 className={carousel.slideTitle}>{item.title}</h3>
+              <p className={`${carousel.slideDesc} ${styles.slideDesc}`}>
+                {item.description}
+              </p>
             </div>
           </Link>
         ))}
       </div>
 
-      <div className="work-carousel__nav">
+      <div className={carousel.nav}>
         <button
-          className="work-carousel__chevron"
+          className={carousel.chevronBtn}
           onClick={() => scroll(-1)}
           aria-label="Scroll left"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M15 6l-6 6 6 6" />
-          </svg>
+          <ChevronIcon direction="left" size="clamp(1.4rem, 2vw, 1.8rem)" />
         </button>
         <button
-          className="work-carousel__chevron"
+          className={carousel.chevronBtn}
           onClick={() => scroll(1)}
           aria-label="Scroll right"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M9 6l6 6-6 6" />
-          </svg>
+          <ChevronIcon direction="right" size="clamp(1.4rem, 2vw, 1.8rem)" />
         </button>
       </div>
     </div>

@@ -1,37 +1,37 @@
 import Image from "next/image";
 import { SectionCta } from "@/components/section-cta";
+import { SectionHeading, Highlight } from "@/components/section-heading";
+import styles from "./initiatives-section.module.css";
 
 export function InitiativesSection() {
   return (
-    <section className="initiatives-section" aria-label="Positive impact initiatives">
-      <div className="initiatives-section__band">
-        <div className="initiatives-section__inner">
-          <div className="initiatives-section__layout">
-            <div className="initiatives-section__content">
-              <h2 className="initiatives-section__title">
+    <section className={styles.section} aria-label="Positive impact initiatives">
+      <div className={styles.band}>
+        <div className={styles.inner}>
+          <div className={styles.layout}>
+            <div className={styles.content}>
+              <SectionHeading color="white" className={styles.title}>
                 POSITIVE IMPACT{" "}
-                <span className="initiatives-section__title-highlight">
-                  INITIATIVES
-                </span>
-              </h2>
-              <p className="initiatives-section__description">
+                <Highlight>INITIATIVES</Highlight>
+              </SectionHeading>
+              <p className={styles.description}>
                 Our social values guide how we work, support our communities, and
                 create long term impact.
               </p>
               <SectionCta
                 label="OUR VALUES"
                 href="#"
-                className="initiatives-section__cta"
+                variant="light"
               />
             </div>
 
-            <div className="initiatives-section__badge">
+            <div className={styles.badge}>
               <Image
                 src="/logos/b-corp-badge.png"
                 alt="PLMR is proudly B Corp Certified"
                 width={500}
                 height={500}
-                className="initiatives-section__badge-image"
+                className={styles.badgeImage}
               />
             </div>
           </div>

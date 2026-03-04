@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./site-navbar.module.css";
 
 type NavItem = {
   label: string;
@@ -55,10 +56,10 @@ export function SiteNavbar() {
 
   return (
     <header
-      className={`site-navbar${menuOpen ? " site-navbar--menu-open" : ""}`}
+      className={`${styles.navbar}${menuOpen ? ` ${styles.menuOpen}` : ""}`}
     >
-      <div className="site-navbar__inner">
-        <Link href="#" className="site-navbar__brand" aria-label="PLMR home">
+      <div className={styles.inner}>
+        <Link href="#" className={styles.brand} aria-label="PLMR home">
           <Image
             src="/logos/plmr-logo.webp"
             alt="PLMR logo"
@@ -69,10 +70,10 @@ export function SiteNavbar() {
         </Link>
 
         <nav
-          className={`site-navbar__menu${menuOpen ? " site-navbar__menu--open" : ""}`}
+          className={`${styles.menu}${menuOpen ? ` ${styles.menuVisible}` : ""}`}
           aria-label="Primary"
         >
-          <ul className="site-navbar__nav">
+          <ul className={styles.nav}>
             {NAV_ITEMS.map((item, i) => (
               <li
                 key={item.label}
@@ -80,7 +81,7 @@ export function SiteNavbar() {
               >
                 <Link
                   href={item.href}
-                  className="site-navbar__link"
+                  className={styles.link}
                   onClick={closeMenu}
                 >
                   {item.label}
@@ -92,7 +93,7 @@ export function SiteNavbar() {
           {/* CTA inside the dropdown (mobile only) */}
           <Link
             href="#"
-            className="site-navbar__cta site-navbar__cta--mobile"
+            className={`${styles.cta} ${styles.ctaMobile}`}
             onClick={closeMenu}
           >
             CONTACT US
@@ -100,25 +101,25 @@ export function SiteNavbar() {
         </nav>
 
         {/* CTA in the top bar (desktop only) */}
-        <Link href="#" className="site-navbar__cta site-navbar__cta--desktop">
+        <Link href="#" className={`${styles.cta} ${styles.ctaDesktop}`}>
           CONTACT US
         </Link>
 
         <button
-          className={`site-navbar__hamburger${menuOpen ? " site-navbar__hamburger--active" : ""}`}
+          className={`${styles.hamburger}${menuOpen ? ` ${styles.hamburgerActive}` : ""}`}
           onClick={() => setMenuOpen((v) => !v)}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          <span className="site-navbar__hamburger-line" />
-          <span className="site-navbar__hamburger-line" />
-          <span className="site-navbar__hamburger-line" />
+          <span className={styles.hamburgerLine} />
+          <span className={styles.hamburgerLine} />
+          <span className={styles.hamburgerLine} />
         </button>
       </div>
 
       {/* Click-to-close backdrop */}
       <div
-        className="site-navbar__backdrop"
+        className={styles.backdrop}
         onClick={closeMenu}
         aria-hidden="true"
       />

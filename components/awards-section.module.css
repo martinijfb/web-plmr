@@ -1,0 +1,14 @@
+.section {
+  background: var(--plmr-section-bg);
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.inner {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, calc(2rem + 2.5vw), 5rem);
+}
+
+.title {
+  margin: 0 0 clamp(2rem, 4vw, 3.5rem);
+}

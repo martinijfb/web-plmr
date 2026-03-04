@@ -1,0 +1,106 @@
+.section {
+  background: #ffffff;
+}
+
+.card {
+  background: #dbeefb;
+  border-radius: clamp(140px, 18vw, 320px) 0 clamp(140px, 18vw, 320px) 0;
+  width: 100%;
+  padding: clamp(4rem, 8vw, 7rem) clamp(2rem, calc(2rem + 2.5vw), 5rem);
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 600px;
+}
+
+.title {
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.2rem, 2vw, 1.8rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: clamp(0.8rem, 0.95vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-blumine-500);
+  text-transform: uppercase;
+}
+
+.input {
+  width: 100%;
+  padding: clamp(0.6rem, 1vw, 0.85rem) clamp(0.8rem, 1.2vw, 1.2rem);
+  border: none;
+  border-radius: 50px;
+  background: #ffffff;
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  color: var(--color-blumine-500);
+  outline: none;
+  transition: box-shadow 200ms ease;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2px var(--color-curious-blue-500);
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.checkbox {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-blumine-500);
+}
+
+.consentLabel {
+  font-family: var(--font-body);
+  font-size: clamp(0.82rem, 0.95vw, 0.95rem);
+  line-height: 1.5;
+  color: var(--color-blumine-500);
+  max-width: 480px;
+}
+
+.submit {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(0.7rem, 1vw, 0.9rem) clamp(2.5rem, 4vw, 3.5rem);
+  background: var(--color-blumine-500);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+.submit:hover {
+  background: var(--color-blumine-600);
+}
+
+@media (max-width: 640px) {
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}

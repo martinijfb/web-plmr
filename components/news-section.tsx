@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { ChevronIcon } from "@/components/chevron-icon";
+import { SectionHeading, Highlight } from "@/components/section-heading";
 import { NewsCarousel } from "@/components/news-carousel";
+import styles from "./news-section.module.css";
 
 type NewsItem = {
   title: string;
@@ -22,7 +25,7 @@ const NEWS_ITEMS: NewsItem[] = [
     href: "#",
   },
   {
-    title: "The sporting events that need – and deserve – more attention",
+    title: "The sporting events that need \u2013 and deserve \u2013 more attention",
     date: "20 Feb 2026",
     image: "/news-section/news-image-3.png",
     href: "#",
@@ -34,7 +37,7 @@ const NEWS_ITEMS: NewsItem[] = [
     href: "#",
   },
   {
-    title: "Why Every Brand Is Posting Video (and Why Most of It Isn't Working)",
+    title: "Why Every Brand Is Posting Video (and Why Most of It Isn\u2019t Working)",
     date: "18 Feb 2026",
     image: "/news-section/news-image-5.png",
     href: "#",
@@ -49,35 +52,27 @@ const NEWS_ITEMS: NewsItem[] = [
 
 export function NewsSection() {
   return (
-    <section className="news-section" aria-label="News and insights">
-      <div className="news-section__inner">
-        <div className="news-section__layout">
-          <div className="news-section__carousel-area">
+    <section className={styles.section} aria-label="News and insights">
+      <div className={styles.inner}>
+        <div className={styles.layout}>
+          <div className={styles.carouselArea}>
             <NewsCarousel items={NEWS_ITEMS} />
           </div>
 
-          <div className="news-section__sidebar">
-            <h2 className="news-section__title">
-              <span className="news-section__title-highlight">WORDS</span>
+          <div className={styles.sidebar}>
+            <SectionHeading className={styles.title}>
+              <Highlight>WORDS</Highlight>
               {" "}OF
               <br />
               IMPACT
-            </h2>
+            </SectionHeading>
 
-            <Link href="#" className="news-section__cta">
-              <svg
-                className="news-section__cta-chevron"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M15 6l-6 6 6 6" />
-              </svg>
-              <span className="news-section__cta-label">OUR BLOG</span>
+            <Link href="#" className={styles.cta}>
+              <ChevronIcon
+                direction="left"
+                className={styles.ctaChevron}
+              />
+              <span className={styles.ctaLabel}>OUR BLOG</span>
             </Link>
           </div>
         </div>

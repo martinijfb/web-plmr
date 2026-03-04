@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { SectionCta } from "@/components/section-cta";
+import { SectionHeading, Highlight } from "@/components/section-heading";
 import { WorkCarousel } from "@/components/work-carousel";
+import styles from "./work-section.module.css";
 
 type WorkItem = {
   title: string;
@@ -52,26 +54,26 @@ const WORK_ITEMS: WorkItem[] = [
 
 export function WorkSection() {
   return (
-    <section className="work-section" aria-label="Our work">
-      <div className="work-section__inner">
-        <div className="work-section__header">
+    <section className={styles.section} aria-label="Our work">
+      <div className={styles.inner}>
+        <div className={styles.header}>
           <div>
-            <p className="work-section__eyebrow">OUR WORK</p>
-            <h2 className="work-section__title">
+            <p className={styles.eyebrow}>OUR WORK</p>
+            <SectionHeading className={styles.title}>
               IMPACT THROUGH{" "}
-              <span className="work-section__title-highlight">ACTION</span>
-            </h2>
+              <Highlight>ACTION</Highlight>
+            </SectionHeading>
           </div>
           <SectionCta label="OUR CASE STUDIES" href="#" />
         </div>
 
-        <div className="work-section__featured">
+        <div className={styles.featured}>
           <Image
             src={FEATURED_IMAGE}
             alt="Kids Meal Map"
             fill
             sizes="(max-width: 860px) 100vw, 1400px"
-            className="work-section__featured-image"
+            className={styles.featuredImage}
           />
         </div>
 

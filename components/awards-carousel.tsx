@@ -1,7 +1,9 @@
 "use client";
 
-import { useRef, useEffect } from "react";
 import Image from "next/image";
+import { useAutoScroll } from "@/hooks/use-auto-scroll";
+import carousel from "./carousel.module.css";
+import styles from "./awards-carousel.module.css";
 
 type AwardItem = {
   badge: string;
@@ -15,53 +17,38 @@ type AwardsCarouselProps = {
   items: AwardItem[];
 };
 
-const SCROLL_SPEED = 0.5;
-
 export function AwardsCarousel({ items }: AwardsCarouselProps) {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let animId: number;
-
-    const animate = () => {
-      const track = trackRef.current;
-      if (track) {
-        track.scrollLeft += SCROLL_SPEED;
-        if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 1) {
-          track.scrollLeft = 0;
-        }
-      }
-      animId = requestAnimationFrame(animate);
-    };
-
-    animId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animId);
-  }, []);
+  const { trackRef } = useAutoScroll(0.5);
 
   return (
-    <div className="awards-carousel">
-      <div className="awards-carousel__track" ref={trackRef}>
+    <div className={styles.carousel}>
+      <div
+        className={`${carousel.track} ${styles.track}`}
+        ref={trackRef}
+      >
         {items.map((item) => (
           <div
             key={item.title}
-            className="awards-carousel__slide"
+            className={`${carousel.slide} ${styles.slide}`}
           >
-            <div className="awards-carousel__slide-image">
+            <div className={carousel.slideImageWrap}>
               <Image
                 src={item.image}
                 alt={item.title}
                 width={400}
                 height={300}
                 sizes="(max-width: 700px) 72vw, (max-width: 1024px) 40vw, 26vw"
-                className="awards-carousel__image"
+                className={carousel.slideImage}
               />
             </div>
-            <div className="awards-carousel__slide-info">
+            <div className={`${carousel.slideInfo} ${styles.slideInfo}`}>
               <div>
-                <h3 className="awards-carousel__slide-badge">{item.badge}</h3>
-                <p className="awards-carousel__slide-desc">{item.description}</p>
+                <h3 className={styles.slideBadge}>{item.badge}</h3>
+                <p className={`${carousel.slideDesc} ${styles.slideDesc}`}>
+                  {item.description}
+                </p>
               </div>
-              <p className="awards-carousel__slide-year">{item.year}</p>
+              <p className={styles.slideYear}>{item.year}</p>
             </div>
           </div>
         ))}

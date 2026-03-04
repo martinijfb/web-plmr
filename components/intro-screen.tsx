@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import styles from "./intro-screen.module.css";
 
 const INTRO_TOTAL_MS = 2600;
 
@@ -32,29 +33,29 @@ export function IntroScreen() {
 
   return (
     <div
-      className="intro-screen"
+      className={styles.screen}
       role="dialog"
       aria-label="PLMR intro logo"
     >
-      <div className="intro-screen__bg" aria-hidden="true" />
+      <div className={styles.bg} aria-hidden="true" />
 
-      <div className="intro-waves" aria-hidden="true">
-        <div className="intro-wave intro-wave--core" />
-        <div className="intro-wave intro-wave--ring-1" />
-        <div className="intro-wave intro-wave--ring-2" />
-        <div className="intro-wave intro-wave--halo" />
+      <div className={styles.waves} aria-hidden="true">
+        <div className={styles.waveCore} />
+        <div className={styles.waveRing1} />
+        <div className={styles.waveRing2} />
+        <div className={styles.waveHalo} />
       </div>
 
-      <div className="intro-screen__content">
+      <div className={styles.content}>
         <Image
           src="/logos/plmr-logo.webp"
           alt="PLMR logo"
           width={460}
           height={120}
           priority
-          className="intro-screen__logo"
+          className={styles.logo}
         />
-        <p className="intro-screen__tagline">
+        <p className={styles.tagline}>
           Communications + Impact
         </p>
       </div>

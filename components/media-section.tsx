@@ -1,12 +1,14 @@
 import { SectionCta } from "@/components/section-cta";
+import { SectionHeading, Highlight } from "@/components/section-heading";
+import styles from "./media-section.module.css";
 
 const MEDIA_VIDEO_PATH = "/media-appearences/media-apprearences.mp4";
 
 export function MediaSection() {
   return (
-    <section className="media-section" aria-label="PLMR media appearances">
+    <section className={styles.section} aria-label="PLMR media appearances">
       <video
-        className="media-section__video"
+        className={styles.video}
         autoPlay
         muted
         loop
@@ -16,18 +18,18 @@ export function MediaSection() {
         <source src={MEDIA_VIDEO_PATH} type="video/mp4" />
       </video>
 
-      <div className="media-section__overlay" aria-hidden="true" />
+      <div className={styles.overlay} aria-hidden="true" />
 
-      <div className="media-section__content">
-        <h2 className="media-section__title">
+      <div className={styles.content}>
+        <SectionHeading color="white" className={styles.title}>
           <span>IN THE </span>
-          <span className="media-section__title-highlight">MEDIA</span>
-        </h2>
+          <Highlight>MEDIA</Highlight>
+        </SectionHeading>
 
         <SectionCta
           label="MEDIA APPEARANCES"
           href="#"
-          className="media-section__cta"
+          variant="light"
         />
       </div>
     </section>

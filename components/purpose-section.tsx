@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { SectionCta } from "@/components/section-cta";
+import styles from "./purpose-section.module.css";
 
 export function PurposeSection() {
   const linesRef = useRef<(HTMLSpanElement | null)[]>([]);
@@ -52,40 +53,28 @@ export function PurposeSection() {
 
   return (
     <section
-      className="bg-[#f3f4f6] px-4 pb-[clamp(5.2rem,12vw,11.5rem)] pt-[clamp(4.8rem,11vw,10.5rem)]"
+      className={styles.section}
       aria-label="PLMR purpose statement"
     >
-      <div className="mx-auto max-w-[1400px] text-center">
-        <p className="purpose-reveal m-0 text-[clamp(1.35rem,2.7vw,3.4rem)] font-medium leading-[1.24] tracking-[0.005em] text-blumine-500 uppercase">
-          <span className="purpose-reveal__line" ref={setLineRef(0)}>
+      <div className={styles.inner}>
+        <p className={styles.quote}>
+          <span className={styles.revealLine} ref={setLineRef(0)}>
             &ldquo;OUR{" "}
-            <span className="inline-block font-bold text-curious-blue-500 transition-all duration-300 ease-out will-change-transform hover:scale-110 hover:[text-shadow:0_0_12px_rgba(31,157,216,0.65),0_0_24px_rgba(32,80,129,0.45)]">
-              PURPOSE
-            </span>{" "}
+            <span className={styles.highlightWord}>PURPOSE</span>{" "}
             IS TO MAKE A
           </span>
-          <span className="purpose-reveal__line" ref={setLineRef(1)}>
-            <span className="inline-block font-bold text-curious-blue-500 transition-all duration-300 ease-out will-change-transform hover:scale-110 hover:[text-shadow:0_0_12px_rgba(31,157,216,0.65),0_0_24px_rgba(32,80,129,0.45)]">
-              POSITIVE
-            </span>{" "}
+          <span className={styles.revealLine} ref={setLineRef(1)}>
+            <span className={styles.highlightWord}>POSITIVE</span>{" "}
             AND SUSTAINABLE{" "}
-            <span className="inline-block font-bold text-curious-blue-500 transition-all duration-300 ease-out will-change-transform hover:scale-110 hover:[text-shadow:0_0_12px_rgba(31,157,216,0.65),0_0_24px_rgba(32,80,129,0.45)]">
-              IMPACT
-            </span>
+            <span className={styles.highlightWord}>IMPACT</span>
           </span>
-          <span className="purpose-reveal__line" ref={setLineRef(2)}>
+          <span className={styles.revealLine} ref={setLineRef(2)}>
             FOR OUR{" "}
-            <span className="inline-block font-bold text-curious-blue-500 transition-all duration-300 ease-out will-change-transform hover:scale-110 hover:[text-shadow:0_0_12px_rgba(31,157,216,0.65),0_0_24px_rgba(32,80,129,0.45)]">
-              CLIENTS
-            </span>
+            <span className={styles.highlightWord}>CLIENTS</span>
             , OUR{" "}
-            <span className="inline-block font-bold text-curious-blue-500 transition-all duration-300 ease-out will-change-transform hover:scale-110 hover:[text-shadow:0_0_12px_rgba(31,157,216,0.65),0_0_24px_rgba(32,80,129,0.45)]">
-              PEOPLE
-            </span>{" "}
+            <span className={styles.highlightWord}>PEOPLE</span>{" "}
             AND{" "}
-            <span className="inline-block font-bold text-curious-blue-500 transition-all duration-300 ease-out will-change-transform hover:scale-110 hover:[text-shadow:0_0_12px_rgba(31,157,216,0.65),0_0_24px_rgba(32,80,129,0.45)]">
-              SOCIETY
-            </span>
+            <span className={styles.highlightWord}>SOCIETY</span>
             &rdquo;
           </span>
         </p>
@@ -93,7 +82,7 @@ export function PurposeSection() {
         <SectionCta
           label="WHO WE ARE"
           href="#"
-          className="mt-[clamp(2.4rem,4.8vw,5rem)]"
+          className={styles.cta}
         />
       </div>
     </section>
