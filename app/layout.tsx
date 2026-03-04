@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { IntroScreen } from "@/components/intro-screen";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
 import "./globals.css";
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} plmr-body antialiased`}>
+        <IntroScreen />
         <div className="plmr-shell">
           <SiteNavbar />
           <main className="plmr-main">{children}</main>
