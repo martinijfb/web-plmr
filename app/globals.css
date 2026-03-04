@@ -631,6 +631,26 @@ body {
   }
 }
 
+/* ── Purpose reveal (scroll-driven text highlight) ── */
+
+.purpose-reveal__line {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.purpose-reveal__line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f3f4f6;
+  transform-origin: right center;
+  transform: scaleX(calc(1 - var(--reveal, 0)));
+  will-change: transform;
+  pointer-events: none;
+  opacity: 0.82;
+}
+
 .services-section {
   position: relative;
   overflow: hidden;
