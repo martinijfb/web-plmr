@@ -1063,7 +1063,7 @@ body {
 /* ====== WORK CAROUSEL ====== */
 .work-carousel {
   position: relative;
-  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
   margin-left: clamp(-5rem, calc(-2rem - 2.5vw), -2rem);
   margin-right: clamp(-5rem, calc(-2rem - 2.5vw), -2rem);
 }
